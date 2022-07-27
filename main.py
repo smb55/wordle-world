@@ -1,10 +1,15 @@
 import pickle
 import random
+import os
 
-with open(r"C:\Users\silve\OneDrive\Documents\Repos\wordle-world\big_city_list", "rb") as f:
+#update this bit to use relative path
+
+dirname = os.path.dirname(__file__)
+
+with open(os.path.join(dirname, 'big_city_list'), "rb") as f:
     all_cities = pickle.load(f)
 
-with open(r"C:\Users\silve\OneDrive\Documents\Repos\wordle-world\guess_city_list", "rb") as f:
+with open(os.path.join(dirname, 'guess_city_list'), "rb") as f:
     guess_cities = pickle.load(f)
 
 random.shuffle(guess_cities)
