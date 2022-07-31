@@ -18,9 +18,11 @@ random.shuffle(guess_cities)
 # each game will be a new object
 
 class Game:
-    '''this object holds the answer to the game and will return information on what part of a guess is correct when the guess function is called'''
-    def __init__(self, answer_city):
-        self.answer_string = answer_city
+    '''this object holds the answer to the game and will return information on what part of a guess is correct when the guess function is called.
+       must be passed a tuple from guess_cities'''
+    def __init__(self, guess_city):
+        self.answer_string = guess_city[1]
+        self.answer_country = guess_city[0]
     
     def guess(self, city):
         '''city must be a string. return object will be a list of 6 values representing the 6 characters in the guess.
@@ -47,9 +49,7 @@ class ProgramGUI:
         self.main = tkinter.Tk()
         self.main.title('Wordle World')
 
-
         # create 36 StringVar, one for each of the entries
-
         self.var_list = []
         for i in range(1,7):
             for j in range(1,7):
@@ -57,7 +57,6 @@ class ProgramGUI:
         self.var_dict = {var: tkinter.StringVar() for var in self.var_list}
 
         # main row frames
-
         self.title_row = tkinter.Frame(self.main)
         self.instruction_row = tkinter.Frame(self.main)
         self.row1 = tkinter.Frame(self.main)
@@ -74,7 +73,6 @@ class ProgramGUI:
         self.instruction_label = tkinter.Label(self.instruction_row, text='Like Wordle, but with 6 letter cities of the world!', font='Calibri 14 bold').pack(side='top')
 
         # going to use zip to create a dictionary of entry boxes and rows. There are 6 entry boxes per row, so to use zip need to create a list with each row x6
-
         self.row_list = [self.row1, self.row2, self.row3, self.row4, self.row5, self.row6]
 
         self.row_list_exp = []
@@ -83,15 +81,20 @@ class ProgramGUI:
                 self.row_list_exp.append(row)
 
         # create a dictionary of 36 tkinter.Entry for the letter entry boxes. first digit is row, second digit is position. eg 11 (top left) to 66 (bottom right)
-
-        self.entry_dict = {var: tkinter.Entry(row, width='3', textvariable=self.var_dict[var], font='Calibri 14', justify='center').pack(side='left', padx='1', pady='1') 
+        self.entry_dict = {var: tkinter.Entry(row, width='3', textvariable=self.var_dict[var], font='Calibri 14', justify='center') 
                             for var, row in zip(self.var_list, self.row_list_exp)}
-        
+
+        # pack entry widgets
+        for var in self.var_list:
+            self.entry_dict[var].pack(side='left', padx='1', pady='1')
+
+        # disable entry boxes from line 2 onwards
+        for var_name in self.var_list[6:]:
+            self.entry_dict[var_name].config(state = 'disabled')
+
+        # add on-screen keyboard code here
 
         # create and pack buttons
-        # placeholder function for button
-        def placeholder_function(self):
-            pass
 
         self.submit_button = tkinter.Button(self.buttons_row, text='Submit', font='Calibri 16 bold', command=lambda: self.placeholder_function()).pack(side='left', padx='15')
         self.new_button = tkinter.Button(self.buttons_row, text='New Game', font='Calibri 16 bold', command=lambda: self.placeholder_function()).pack(side='left', padx='15')
@@ -108,8 +111,15 @@ class ProgramGUI:
         self.keyboard_row.pack()
         self.buttons_row.pack(padx='10', pady='10')
         
-
+        # create a game
+        self.guesses = 0
+        self.game = Game(guess_cities.pop())
 
         tkinter.mainloop()
+
+    # placeholder function for button - remove once real function is created
+    def placeholder_function(self):
+        pass
+
 
 gui = ProgramGUI()
