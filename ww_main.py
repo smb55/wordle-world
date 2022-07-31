@@ -80,26 +80,16 @@ class ProgramGUI:
             for num in range(6):
                 self.row_list_exp.append(row)
 
-        # create a dictionary of 36 tkinter.Entry for the letter entry boxes. first digit is row, second digit is position. eg 11 (top left) to 66 (bottom right)
-        self.entry_dict = {var: tkinter.Entry(row, width='3', textvariable=self.var_dict[var], font='Calibri 14', justify='center') 
-                            for var, row in zip(self.var_list, self.row_list_exp)}
-
-        # pack entry widgets
-        for var in self.var_list:
-            self.entry_dict[var].pack(side='left', padx='1', pady='1')
-
-        # disable entry boxes from line 2 onwards
-        for var_name in self.var_list[6:]:
-            self.entry_dict[var_name].config(state = 'disabled')
-
+        # code to use this row and variable list to pack fresh entry widgets has been abstracted to this function
+        self.new_game()
+        
         # add on-screen keyboard code here
 
         # create and pack buttons
-
         self.submit_button = tkinter.Button(self.buttons_row, text='Submit', font='Calibri 16 bold', command=lambda: self.placeholder_function()).pack(side='left', padx='15')
-        self.new_button = tkinter.Button(self.buttons_row, text='New Game', font='Calibri 16 bold', command=lambda: self.placeholder_function()).pack(side='left', padx='15')
+        self.new_button = tkinter.Button(self.buttons_row, text='New Game', font='Calibri 16 bold', command=lambda: self.new_game()).pack(side='left', padx='15')
+        
         # pack frames
-
         self.title_row.pack()
         self.instruction_row.pack(padx='5', pady='5')
         self.row1.pack()
@@ -111,15 +101,36 @@ class ProgramGUI:
         self.keyboard_row.pack()
         self.buttons_row.pack(padx='10', pady='10')
         
-        # create a game
-        self.guesses = 0
-        self.game = Game(guess_cities.pop())
-
         tkinter.mainloop()
 
     # placeholder function for button - remove once real function is created
     def placeholder_function(self):
         pass
+
+    def create_entries(self):
+        '''this function creates and packs the entry widgets'''
+        # create a dictionary of 36 tkinter.Entry for the letter entry boxes. first digit is row, second digit is position. eg 11 (top left) to 66 (bottom right)
+        self.entry_dict = {var: tkinter.Entry(row, width='3', textvariable=self.var_dict[var], font='Calibri 14', justify='center') 
+                            for var, row in zip(self.var_list, self.row_list_exp)}
+        
+        # pack entry widgets
+        for var in self.var_list:
+            self.entry_dict[var].pack(side='left', padx='1', pady='1')
+
+        # disable entry boxes from line 2 onwards
+        for var_name in self.var_list[6:]:
+            self.entry_dict[var_name].config(state = 'disabled')
+
+    def new_game(self):
+        ''' resets the gui and creates a new game'''
+        for row in self.row_list:
+            for widget in row.winfo_children():
+                widget.destroy()
+        
+        self.guesses = 0
+        self.game = Game(guess_cities.pop())
+
+        self.create_entries()   
 
 
 gui = ProgramGUI()
