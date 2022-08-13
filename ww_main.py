@@ -21,8 +21,9 @@ class Game:
     '''this object holds the answer to the game and will return information on what part of a guess is correct when the guess function is called.
        must be passed a tuple from guess_cities'''
     def __init__(self, guess_city):
-        self.answer_string = guess_city[1].upper()
-        self.answer_country = guess_city[0]
+        self.answer_string = ''
+        for char in guess_city:
+            self.answer_string += char.upper()
     
     def guess(self, city):
         '''city must be a string. return object will be a list of 6 values representing the 6 characters in the guess.
@@ -103,10 +104,6 @@ class ProgramGUI:
         
         tkinter.mainloop()
 
-    # placeholder function for button - remove once real function is created
-    def placeholder_function(self):
-        pass
-
     def create_entries(self):
         '''this function creates and packs the entry widgets'''
         # create a dictionary of 36 tkinter.Entry for the letter entry boxes. first digit is row, second digit is position. eg 11 (top left) to 66 (bottom right)
@@ -167,10 +164,10 @@ class ProgramGUI:
         self.guesses += 1   
 
         if return_values == [2, 2, 2, 2, 2, 2]:
-            tkinter.messagebox.showinfo('Congratulations!', 'You solved it! '+ self.game.answer_string.title() + ' is the capital of '+ self.game.answer_country + '.')
+            tkinter.messagebox.showinfo('Congratulations!', 'You solved it!')
         
         elif self.guesses == 6:
-            tkinter.messagebox.showerror('Out of Guesses!', 'You ran out of guesses without solving it. The answer was ' + self.game.answer_string.title() + ', capital of ' + self.game.answer_country + '.')
+            tkinter.messagebox.showerror('Out of Guesses!', 'You ran out of guesses without solving it. The answer was ' + self.game.answer_string.title())
 
 
 gui = ProgramGUI()
