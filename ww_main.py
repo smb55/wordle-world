@@ -1,3 +1,7 @@
+# to do:
+# set cursor to first box
+# implement keyboard functions to actually press the key
+# make boxes bigger to match keyboard size (or keyboard smaller)
 
 import pickle
 import random
@@ -165,7 +169,7 @@ class ProgramGUI:
         self.clear_button = ttk.Button(self.key,text = 'Clear', width = 6, command = lambda : self.clear())
         self.clear_button.grid(row = 3 , column = 8, ipadx = 6 , ipady = 10)
 
-        self.key.pack()
+        self.key.pack(padx=10, pady=10)
 
         # going to use zip to create a dictionary of entry boxes and rows. There are 6 entry boxes per row, so to use zip need to create a list with each row x6
         self.row_list = [self.row1, self.row2, self.row3, self.row4, self.row5, self.row6]
