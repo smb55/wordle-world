@@ -82,94 +82,96 @@ class ProgramGUI:
 
         # keyboard frame
         self.key = tk.Frame(self.keyboard_row)
+
+        ## On-screen keyboad not yet working so is commented out
         
-        # First Line Button
+        # # First Line Button
         
-        q = ttk.Button(self.key,text = 'Q' , width = 6, command = lambda : self.press('Q'))
-        q.grid(row = 1 , column = 0, ipadx = 6 , ipady = 10)
+        # q = ttk.Button(self.key,text = 'Q' , width = 6, command = lambda : self.press('Q'))
+        # q.grid(row = 1 , column = 0, ipadx = 6 , ipady = 10)
         
-        w = ttk.Button(self.key,text = 'W' , width = 6, command = lambda : self.press('W'))
-        w.grid(row = 1 , column = 1, ipadx = 6 , ipady = 10)
+        # w = ttk.Button(self.key,text = 'W' , width = 6, command = lambda : self.press('W'))
+        # w.grid(row = 1 , column = 1, ipadx = 6 , ipady = 10)
         
-        E = ttk.Button(self.key,text = 'E' , width = 6, command = lambda : self.press('E'))
-        E.grid(row = 1 , column = 2, ipadx = 6 , ipady = 10)
+        # E = ttk.Button(self.key,text = 'E' , width = 6, command = lambda : self.press('E'))
+        # E.grid(row = 1 , column = 2, ipadx = 6 , ipady = 10)
         
-        R = ttk.Button(self.key,text = 'R' , width = 6, command = lambda : self.press('R'))
-        R.grid(row = 1 , column = 3, ipadx = 6 , ipady = 10)
+        # R = ttk.Button(self.key,text = 'R' , width = 6, command = lambda : self.press('R'))
+        # R.grid(row = 1 , column = 3, ipadx = 6 , ipady = 10)
         
-        T = ttk.Button(self.key,text = 'T' , width = 6, command = lambda : self.press('T'))
-        T.grid(row = 1 , column = 4, ipadx = 6 , ipady = 10)
+        # T = ttk.Button(self.key,text = 'T' , width = 6, command = lambda : self.press('T'))
+        # T.grid(row = 1 , column = 4, ipadx = 6 , ipady = 10)
         
-        Y = ttk.Button(self.key,text = 'Y' , width = 6, command = lambda : self.press('Y'))
-        Y.grid(row = 1 , column = 5, ipadx = 6 , ipady = 10)
+        # Y = ttk.Button(self.key,text = 'Y' , width = 6, command = lambda : self.press('Y'))
+        # Y.grid(row = 1 , column = 5, ipadx = 6 , ipady = 10)
         
-        U = ttk.Button(self.key,text = 'U' , width = 6, command = lambda : self.press('U'))
-        U.grid(row = 1 , column = 6, ipadx = 6 , ipady = 10)
+        # U = ttk.Button(self.key,text = 'U' , width = 6, command = lambda : self.press('U'))
+        # U.grid(row = 1 , column = 6, ipadx = 6 , ipady = 10)
         
-        I = ttk.Button(self.key,text = 'I' , width = 6, command = lambda : self.press('I'))
-        I.grid(row = 1 , column = 7, ipadx = 6 , ipady = 10)
+        # I = ttk.Button(self.key,text = 'I' , width = 6, command = lambda : self.press('I'))
+        # I.grid(row = 1 , column = 7, ipadx = 6 , ipady = 10)
         
-        O = ttk.Button(self.key,text = 'O' , width = 6, command = lambda : self.press('O'))
-        O.grid(row = 1 , column = 8, ipadx = 6 , ipady = 10)
+        # O = ttk.Button(self.key,text = 'O' , width = 6, command = lambda : self.press('O'))
+        # O.grid(row = 1 , column = 8, ipadx = 6 , ipady = 10)
         
-        P = ttk.Button(self.key,text = 'P' , width = 6, command = lambda : self.press('P'))
-        P.grid(row = 1 , column = 9, ipadx = 6 , ipady = 10)
+        # P = ttk.Button(self.key,text = 'P' , width = 6, command = lambda : self.press('P'))
+        # P.grid(row = 1 , column = 9, ipadx = 6 , ipady = 10)
                
-        # Second Line Button       
-        A = ttk.Button(self.key,text = 'A' , width = 6, command = lambda : self.press('A'))
-        A.grid(row = 2 , column = 0, ipadx = 6 , ipady = 10)
+        # # Second Line Button       
+        # A = ttk.Button(self.key,text = 'A' , width = 6, command = lambda : self.press('A'))
+        # A.grid(row = 2 , column = 0, ipadx = 6 , ipady = 10)
                         
-        S = ttk.Button(self.key,text = 'S' , width = 6, command = lambda : self.press('S'))
-        S.grid(row = 2 , column = 1, ipadx = 6 , ipady = 10)
+        # S = ttk.Button(self.key,text = 'S' , width = 6, command = lambda : self.press('S'))
+        # S.grid(row = 2 , column = 1, ipadx = 6 , ipady = 10)
         
-        D = ttk.Button(self.key,text = 'D' , width = 6, command = lambda : self.press('D'))
-        D.grid(row = 2 , column = 2, ipadx = 6 , ipady = 10)
+        # D = ttk.Button(self.key,text = 'D' , width = 6, command = lambda : self.press('D'))
+        # D.grid(row = 2 , column = 2, ipadx = 6 , ipady = 10)
         
-        F = ttk.Button(self.key,text = 'F' , width = 6, command = lambda : self.press('F'))
-        F.grid(row = 2 , column = 3, ipadx = 6 , ipady = 10)
+        # F = ttk.Button(self.key,text = 'F' , width = 6, command = lambda : self.press('F'))
+        # F.grid(row = 2 , column = 3, ipadx = 6 , ipady = 10)
                
-        G = ttk.Button(self.key,text = 'G' , width = 6, command = lambda : self.press('G'))
-        G.grid(row = 2 , column = 4, ipadx = 6 , ipady = 10)
+        # G = ttk.Button(self.key,text = 'G' , width = 6, command = lambda : self.press('G'))
+        # G.grid(row = 2 , column = 4, ipadx = 6 , ipady = 10)
                
-        H = ttk.Button(self.key,text = 'H' , width = 6, command = lambda : self.press('H'))
-        H.grid(row = 2 , column = 5, ipadx = 6 , ipady = 10)
+        # H = ttk.Button(self.key,text = 'H' , width = 6, command = lambda : self.press('H'))
+        # H.grid(row = 2 , column = 5, ipadx = 6 , ipady = 10)
                 
-        J = ttk.Button(self.key,text = 'J' , width = 6, command = lambda : self.press('J'))
-        J.grid(row = 2 , column = 6, ipadx = 6 , ipady = 10)
+        # J = ttk.Button(self.key,text = 'J' , width = 6, command = lambda : self.press('J'))
+        # J.grid(row = 2 , column = 6, ipadx = 6 , ipady = 10)
                 
-        K = ttk.Button(self.key,text = 'K' , width = 6, command = lambda : self.press('K'))
+        # K = ttk.Button(self.key,text = 'K' , width = 6, command = lambda : self.press('K'))
 
-        K.grid(row = 2 , column = 7, ipadx = 6 , ipady = 10)
+        # K.grid(row = 2 , column = 7, ipadx = 6 , ipady = 10)
         
-        L = ttk.Button(self.key,text = 'L' , width = 6, command = lambda : self.press('L'))
-        L.grid(row = 2 , column = 8, ipadx = 6 , ipady = 10)
+        # L = ttk.Button(self.key,text = 'L' , width = 6, command = lambda : self.press('L'))
+        # L.grid(row = 2 , column = 8, ipadx = 6 , ipady = 10)
                
-        # third line Button        
-        Z = ttk.Button(self.key,text = 'Z' , width = 6, command = lambda : self.press('Z'))
-        Z.grid(row = 3 , column = 1, ipadx = 6 , ipady = 10)
+        # # third line Button        
+        # Z = ttk.Button(self.key,text = 'Z' , width = 6, command = lambda : self.press('Z'))
+        # Z.grid(row = 3 , column = 1, ipadx = 6 , ipady = 10)
           
-        X = ttk.Button(self.key,text = 'X' , width = 6, command = lambda : self.press('X'))
-        X.grid(row = 3 , column = 2, ipadx = 6 , ipady = 10)
+        # X = ttk.Button(self.key,text = 'X' , width = 6, command = lambda : self.press('X'))
+        # X.grid(row = 3 , column = 2, ipadx = 6 , ipady = 10)
             
-        C = ttk.Button(self.key,text = 'C' , width = 6, command = lambda : self.press('C'))
-        C.grid(row = 3 , column = 3, ipadx = 6 , ipady = 10)
+        # C = ttk.Button(self.key,text = 'C' , width = 6, command = lambda : self.press('C'))
+        # C.grid(row = 3 , column = 3, ipadx = 6 , ipady = 10)
                
-        V = ttk.Button(self.key,text = 'V' , width = 6, command = lambda : self.press('V'))
-        V.grid(row = 3 , column = 4, ipadx = 6 , ipady = 10)
+        # V = ttk.Button(self.key,text = 'V' , width = 6, command = lambda : self.press('V'))
+        # V.grid(row = 3 , column = 4, ipadx = 6 , ipady = 10)
        
-        B = ttk.Button(self.key, text= 'B' , width = 6 , command = lambda : self.press('B'))
-        B.grid(row = 3 , column = 5 , ipadx = 6 ,ipady = 10)
+        # B = ttk.Button(self.key, text= 'B' , width = 6 , command = lambda : self.press('B'))
+        # B.grid(row = 3 , column = 5 , ipadx = 6 ,ipady = 10)
       
-        N = ttk.Button(self.key,text = 'N' , width = 6, command = lambda : self.press('N'))
-        N.grid(row = 3 , column = 6, ipadx = 6 , ipady = 10)
+        # N = ttk.Button(self.key,text = 'N' , width = 6, command = lambda : self.press('N'))
+        # N.grid(row = 3 , column = 6, ipadx = 6 , ipady = 10)
                 
-        M = ttk.Button(self.key,text = 'M' , width = 6, command = lambda : self.press('M'))
-        M.grid(row = 3 , column = 7, ipadx = 6 , ipady = 10)
+        # M = ttk.Button(self.key,text = 'M' , width = 6, command = lambda : self.press('M'))
+        # M.grid(row = 3 , column = 7, ipadx = 6 , ipady = 10)
 
-        self.clear_button = ttk.Button(self.key,text = 'Clear', width = 6, command = lambda : self.clear())
-        self.clear_button.grid(row = 3 , column = 8, ipadx = 6 , ipady = 10)
+        # self.clear_button = ttk.Button(self.key,text = 'Clear', width = 6, command = lambda : self.clear())
+        # self.clear_button.grid(row = 3 , column = 8, ipadx = 6 , ipady = 10)
 
-        self.key.pack(padx=10, pady=10)
+        # self.key.pack(padx=10, pady=10)
 
         # going to use zip to create a dictionary of entry boxes and rows. There are 6 entry boxes per row, so to use zip need to create a list with each row x6
         self.row_list = [self.row1, self.row2, self.row3, self.row4, self.row5, self.row6]
@@ -204,10 +206,14 @@ class ProgramGUI:
 
     # On screen keyboard functions
 
+    ##### Need to fix this function
+    
     # key self.press function
-    def press(char):
-        sys.stdin.write(char)
-        sys.stdin.write('\t')
+    def press(self, char):
+        pass
+    
+        #sys.stdin.write(char)
+        #sys.stdin.write('\t')
     
     # self.clear button function 
     def clear():
@@ -240,6 +246,9 @@ class ProgramGUI:
         self.game = Game(guess_cities.pop())
 
         self.create_entries()
+
+        # set focus to the first box
+        self.entry_dict['11'].focus_set()
 
     # add some error checking / exception handling here
     def guess(self):
